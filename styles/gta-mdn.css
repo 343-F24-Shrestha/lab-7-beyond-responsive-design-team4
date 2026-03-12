@@ -1,0 +1,101 @@
+/* Most of this is straight up the MDN's holy grail, but they didn't actually
+include the css that made their images, so I added in a little padding, and
+ul/li styling to make it a bit closer. 
+Except I wasn't into the rounded borders in this case, so I left those out.
+https: //developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Common_grid_layouts#a_responsive_layout_with_1_to_3_fluid_columns_using_grid-template-areas
+*/
+
+
+/* 1. assign the elements with matching classes 
+(in this example there will be only 1 element with each class)
+to GTAs that don't currently exist */
+.main-head {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.main-nav {
+    grid-area: nav;
+}
+
+.side {
+    grid-area: sidebar;
+}
+
+.ad {
+    grid-area: ad;
+}
+
+.main-footer {
+    grid-area: footer;
+}
+
+/* 2. oh yeah, let's actually define those GTAs
+let's do "mobile-first" design on this one:
+default to a single column layout
+(which we consider the preferred layout for mobile for this site) */
+.wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "sidebar"
+        "ad"
+        "footer";
+
+    &>* {
+        padding: 0.25rem;
+    }
+
+    & nav ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+/* 3. Tablet-sized viewport (width) gets 2-col layout */
+
+@media (width >=500px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "header  header"
+            "nav     nav"
+            "sidebar content"
+            "ad      footer";
+
+        &>* {
+            padding: 1rem;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* 4. "Desktop" (or landscape mobile/tablet) layout is 3 cols */
+@media (width >=700px) {
+    .wrapper {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+            "header header  header"
+            "nav    content sidebar"
+            "nav    content ad"
+            "footer footer  footer";
+
+        &>* {
+            padding: 2rem;
+        }
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}

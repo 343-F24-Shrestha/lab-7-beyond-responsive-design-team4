@@ -1,0 +1,63 @@
+:root {
+    --lion: #EEC250;
+    --tiger: #DA834C;
+    --wolf: #C6443F;
+    --bear: #9FC2DC;
+    --webelos: #8E9F63;
+    --aol: #E9D8C5;
+    --border-color: var(--jmu-purple, #002F6D);
+}
+
+body {
+    margin: 0;
+}
+
+body.debug {
+    header.main-head {
+        background-color: var(--lion);
+    }
+
+    nav.main-nav {
+        background-color: var(--tiger);
+    }
+
+    main.content {
+        background-color: var(--wolf);
+    }
+
+    aside.side {
+        background-color: var(--bear);
+    }
+
+    div.ad {
+        background-color: var(--webelos);
+    }
+
+    footer.main-footer {
+        background-color: var(--aol);
+    }
+
+    &.wrapper>* {
+        border: 0.125rem solid var(--border-color);
+    }
+}
+
+@media (width >=500px) {
+    body.debug.wrapper>* {
+        border: 0.25rem solid var(--border-color);
+    }
+}
+
+@media (width >=700px) {
+    body.debug.wrapper>* {
+        border: 0.5rem solid var(--border-color);
+    }
+}
+
+body.tall {
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
