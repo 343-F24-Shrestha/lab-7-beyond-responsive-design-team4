@@ -1,0 +1,65 @@
+:root {
+    /* https: //wiki.cs.jmu.edu/department/cs-branding/ */
+    /* https: //www.jmu.edu/identity/our-style/color.shtml */
+    --jmu-slate-gray: #333333;
+    --jmu-cs-ice-blue: #8EE4D7;
+    --jmu-purple: #450084;
+    --jmu-cs-teal: #009698;
+    --jmu-light-gold: #F4EFE1;
+    --jmu-heading-font: Arvo;
+    --jmu-heading-fam: var(--jmu-heading-font), Georgia, serif;
+    --jmu-sans-fam: Arial, Helvetica, sans-serif;
+}
+
+.jmu {
+    /* https: //www.jmu.edu/identity/our-style/typography.shtml */
+    font-family: var(--jmu-sans-fam);
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.jmu-h {
+    font-family: var(--jmu-heading-fam);
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2em;
+    /* used in page title*/
+}
+
+h2 {
+    font-size: 1.75em;
+    /* used in content headings**/
+}
+
+h3 {
+    font-family: var(--jmu-sans-fam);
+    font-size: 1.625em;
+    /* used for content heading* */
+}
+
+h4 {
+    font-family: var(--jmu-sans-fam);
+    font-size: 1.375em;
+    /* used in action link*/
+}
+
+h5 {
+    font-size: 1.125em;
+    /* used in link list */
+}
+
+h6 {
+    font-family: var(--jmu-sans-fam);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.046875em;
+    /*, all caps, letter-spacing: .75px*/
+}

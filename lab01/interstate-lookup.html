@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="CS 343 Lab 1">
+  <meta name="author" content="TODO type your name">
+  <title>Interstate Lookup</title>
+</head>
+
+<body>
+  <h1>Interstate Lookup</h1>
+
+  <label>
+    Enter an interstate number:
+    <input type="number" id="user-input">
+  </label>
+  <button onclick="checkDirection()">Check</button>
+
+  <p id="user-output"></p>
+
+  <script>
+    const input = document.getElementById("user-input");
+    const output = document.getElementById("user-output");
+
+    function checkDirection() {
+      const value = parseInt(input.value);
+
+      if (isNaN(value) || value < 1 || value > 999) {
+      output.textContent = "Please enter an integer between 1 and 999.";
+      return;
+      }
+      if (value < 100) {
+        if (value % 2 == 0) {
+           output.textContent = `I-${value} is a primary east-west`;
+        } else {
+          output.textContent = `I-${value} is a primary north-south`;
+        }
+           
+      } else {
+        const first_num = Math.floor(value / 100);
+        const interstate = value % 100
+        if (first_num % 2 == 0) {
+          output.textContent = `I-${value} is a beltway for I-${interstate}`
+        } else {
+          output.textContent = `I-${value} is a spur for I-${interstate}`
+        }
+      }
+      
+    }
+  </script>
+</body>
+
+</html>
