@@ -1,0 +1,11 @@
+@media (width <= 374px) {
+    .wrapper {
+        grid-template-areas:
+            "header"
+            "content"
+            "nav"
+            "sidebar"
+            "ad"
+            "footer";
+    }
+}
