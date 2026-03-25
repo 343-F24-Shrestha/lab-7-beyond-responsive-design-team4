@@ -8,4 +8,7 @@
             "ad"
             "footer";
     }
+    .main-head {
+        display: none;
+    }
 }
