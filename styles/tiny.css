@@ -1,14 +1,21 @@
 @media (width <= 374px) {
     .wrapper {
         grid-template-areas:
-            "header"
             "content"
             "nav"
-            "sidebar"
-            "ad"
-            "footer";
     }
     .main-head {
+        display: none;
+    }
+    .side {
+        display: none;
+    }
+
+    .ad {
+        display: none;
+    }
+
+    .main-footer {
         display: none;
     }
 }
