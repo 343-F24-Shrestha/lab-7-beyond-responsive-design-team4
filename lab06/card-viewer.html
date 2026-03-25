@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cards Viewer</title>
+  <link rel="stylesheet" href="cards.css">
+</head>
+
+<body>
+  <main id="card-list">
+    <!-- PUT CARDS HERE -->
+  </main>
+  <!-- TEMPLATE FOR CARDS -->
+  <template id="card-template">
+    <div class="card-display">
+      <div class="card-page page-one">
+        <button type="button" class="delete-btn">Delete</button>
+        <div class="title"><span class="title-text" contenteditable>TITLE</span></div>
+        <div class="subtitle"><span class="subtitle-text" contenteditable>SUBTITLE</span></div>
+      </div>
+      <div class="card-page page-two">
+        <div class="to">Dear <span class="to-text" contenteditable>RECIPIENT</span>,</div>
+        <div class="message"><span class="message-text" contenteditable>YOUR MESSAGE HERE</span></div>
+        <div class="from">Sincerely, <span class="from-text" contenteditable>SENDER</span></div>
+      </div>
+    </div>
+  </template>
+  <script src="viewcards.js"></script>
+</body>
+
+</html>

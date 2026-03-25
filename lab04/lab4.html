@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://fav.mhciael.com/📃">
+    <title>Lab: Grocery List</title>
+    <link rel="stylesheet" href="grocery-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Grocery List</h1>
+    </header>
+    <main>
+        <!-- Table used for grocery list! -->
+        <table id="list">
+            <!-- Just the table headers -->
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+
+            <!-- This is where each table row goes: -->
+            <tbody id="list-body">
+
+                <!-- TODO: Example rows (Feel free to delete/comment out) -->
+                <tr>
+                    <td>Milk</td>
+                    <td>1</td>
+                    <td>2% or whole</td>
+                </tr>
+                <tr>
+                    <td>Eggs</td>
+                    <td>12</td>
+                    <td>large</td>
+                </tr>
+                <tr>
+                    <td>Bread</td>
+                    <td>1</td>
+                    <td>get the good stuff</td>
+                </tr>
+
+                <!-- Additional items will be added here -->
+
+            </tbody>
+        </table>
+
+        <div id="form-container">
+            <h2>Add an Item:</h2>
+            <form id="grocery-form">
+                <!-- TODO: Make a text input for the item -->
+                <label for="item">Item:</label>
+                <input type="text" id = "item" name="item" required>
+                <br>
+
+                <!-- TODO: Make a numerical input for the quantity -->
+                <label for="quantity">Quantity:</label>
+                <input type="number", id ="quantity" name="quantity" required>
+                <br>
+
+                <!-- TODO: Make a text input for the notes -->
+                <label for="notes">Notes:</label>
+                <input type="text", id ="notes" name="notes">
+                <br>
+
+                <!-- TODO: Make a submit button -->
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Script to handle adding items to list! -->
+    <script>
+        const formEl = document.getElementById("grocery-form");
+
+        // Add a new event listener to the form's submit event
+        formEl.addEventListener("submit", addItemToList);
+
+        /**
+         * Adds a new item to the grocery list table.
+         */
+        function addItemToList(event) {
+            // TODO: Uncomment this line and see what changes!
+            event.preventDefault();
+
+            // Get the table body where new rows will be added
+            const listBody = document.getElementById("list-body");
+            
+            // Add the new row to the table body
+            const newRowElement = makeRow();
+            listBody.appendChild(newRowElement);
+        }
+
+        /**
+         * Returns a new table row element (<tr>) containing the values from the form fields.
+         */
+        function makeRow() {
+            // 1. Use document.getElementById() or document.querySelector() to get the input fields:
+            let itemInput = document.getElementById("item");     // TODO: Get the item input element
+            let quantityInput = document.getElementById("quantity"); // TODO: Get the quantity input element
+            let notesInput = document.getElementById("notes");    // TODO: Get the notes input element
+
+            // 2. Create a table row and populate it with the values from the input fields.
+            const newRow = document.createElement("tr");
+
+            // TODO: Create cells for each field and add them to the row. Two ways:
+            //       a) Use document.createElement() and element.appendChild() (more code, but safe)
+            let item = document.createElement("td");
+            item.textContent = itemInput.value;
+            let quant = document.createElement("td");
+            quant.textContent = quantityInput.value;
+            let notes = document.createElement("td");
+            notes.textContent = notesInput.value
+            newRow.append(item);
+            newRow.append(quant);
+            newRow.append(notes);
+            //       b) Use innerHTML (unsafe -- vulnerable to XSS attacks, but less code)
+            
+
+            // 3. Return the new row element!
+            return newRow;
+        }
+    </script>
+</body>
+
+</html>

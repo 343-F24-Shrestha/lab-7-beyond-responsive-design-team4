@@ -1,0 +1,93 @@
+/* 1.3. Look at these CSS rules and analyze them. */
+nav a {
+    margin-right: 10px;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+article {
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+    width: 250px;
+}
+
+/*** PART 2 ***/
+
+/* 2.1 Make the entire page use a "sans-serif" font. */
+
+body {
+    font-family: sans-serif;
+}
+
+
+/* 2.2 Give the boxes in "Our Services" and "Our Stylists" a margin of 5px and a padding of 10px. */
+#services article, #stylists article{
+    margin: 5px;
+    padding: 10px;
+
+}
+
+/* 2.3 Make the tagline use a "cursive" font, give it a 20pt font size, and make it JMU purple. */
+#tagline {
+    color: #450084;
+    font-size: 20pt;
+    font-family: cursive;
+}
+
+/* 2.4 All text in a span with class "highlight" should be italicized and have a "lightyellow" background. */
+.highlight {
+    background-color: lightyellow;
+    font-style: italic;
+
+}
+
+/* 2.5 Make all the prices bold and "green". */
+.price {
+    font-weight: bold;
+    color: green;
+
+}
+
+/* 2.6 Make the phone number in the contact section have a 14pt font size and be "blue". */
+#phone {
+    color: blue;
+    font-size: 14pt;
+}
+
+/*** PART 3 ***/
+
+/* 3.1 Make the boxes for just the services have an "aliceblue" background. */
+#services div article {
+    background-color: aliceblue;
+}
+
+/* 3.2 Make the boxes for just the stylists have a "lavenderblush" background. */
+#stylists div article{
+    background-color: lavenderblush;
+}
+
+/* 3.3 Make the images of the stylists have a rounded border (15px radius). */
+#stylists img {
+ border-radius: 15px;
+}
+
+/* 3.4 Make only the links in the navigation bar have no underline, be "darkblue", and have a 16pt font size. */
+nav a {
+    font-size: 16pt;
+    color: darkblue;
+    text-decoration: none;
+    
+}
+/* 3.5 Make only the names of the stylists have a "darkred" color. */
+#stylists article h3 {
+    color:darkred;
+}
+
+/* 3.6 Make just the text for the address italicized. */
+#location {
+    font-style: italic;
+}
